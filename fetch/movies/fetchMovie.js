@@ -7,8 +7,12 @@ import {
 const fetchMovie = async (id) => {
   if(typeof window === "undefined"){
 
+    const baseURL = process.env.NEXT_PUBLIC_BE_API;
+    const apiKey = process.env.API_KEY;
+  
+    const url = `${baseURL}?apikey=${apiKey}`;
     const response = await fetchHelper(
-      `http://localhost:3000/api/movies?i=${id}`
+      `${url}&i=${id}`
     );
     return response;
   }
@@ -18,7 +22,7 @@ const fetchMovie = async (id) => {
   if (hasDetail && hasDetail.movieDetail) return hasDetail.movieDetail;
 
   const response = await fetchHelper(
-    `http://localhost:3000/api/movies?i=${id}`
+    `/api/movies?i=${id}`
   );
 
   await addMovieDetailToDB(id, response);
