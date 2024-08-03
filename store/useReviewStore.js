@@ -7,7 +7,8 @@ const useReviewStore = create((set, get) => ({
 
   initializeReviews: async (movieIds) => {
     try {
-      set({ reviews: await getReviewsFromDB(movieIds), movieIds });
+        const existingReviews = await getReviewsFromDB(movieIds);
+      set({ reviews: existingReviews?.reviews, movieIds });
     } catch (error) {
       console.error('Failed to initialize reviews:', error);
     }
@@ -15,11 +16,8 @@ const useReviewStore = create((set, get) => ({
 
   addReview: async (movieId, review) => {
     try {
-      // Mengambil data dari IndexedDB terlebih dahulu
       const existingReviews = await getReviewsFromDB(movieId);
-      
-      // Memperbarui data di IndexedDB
-      await addReviewToDB(movieId, [...existingReviews, review]);
+      await addReviewToDB(movieId, [...(existingReviews?.reviews ?? []), review]);
       await get().initializeReviews(get().movieIds)
     } catch (error) {
       console.error('Failed to add review:', error);

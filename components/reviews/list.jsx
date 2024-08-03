@@ -4,7 +4,7 @@ const ReviewList = ({ reviews, onDeleteReview }) => (
   <div className="p-4">
     <h2 className="text-2xl font-bold mb-4">Reviews</h2>
     <ul className="space-y-4">
-      {reviews.length > 0 ? (
+      {reviews && reviews.length > 0 ? (
         reviews.map((review, index) => (
           <li key={index} className="p-4 bg-white shadow-md rounded-lg">
             <div className="flex justify-between items-center mb-2">

@@ -3,7 +3,7 @@ import { serialize } from "@/utils/helpers";
 export default async function handler (req, res) {
   const serializeQuery = serialize(req.query);
 
-  const baseURL = process.BE_API;
+  const baseURL = process.env.BE_API;
   const apiKey = process.env.API_KEY;
 
   const url = `${baseURL}?${serializeQuery}&apikey=${apiKey}`;
