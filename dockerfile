@@ -26,5 +26,5 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/package.json ./package.json
 EXPOSE 3000
 CMD ["node", "server.js"]
-# docker build --no-cache -t bvk/fe . --platform linux/amd64
-# docker run -d -p 3000:3000 --name bvk-fe bvk/fe
+# docker build --no-cache -t next/rq-service-worker . --platform linux/amd64
+# docker run -d -p 3000:3000 --name rq-service-worker next/rq-service-worker
