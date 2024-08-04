@@ -20,7 +20,7 @@ docker run -d -p 3000:3000 --name rq-service-worker next/rq-service-worker
 
 Installation
 
-``bash
+```bash
 npm install
 # or
 yarn install
