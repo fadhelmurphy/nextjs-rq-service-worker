@@ -7,6 +7,8 @@ const CUSTOM_KEY = 'your-custom-key'; // Define your custom key here
  * @returns {Promise<object>} - The JSON response
  */
 const fetchHelper = async (url, options = {}) => {
+  try {
+    
   const response = await fetch(url, {
     ...options,
     headers: {
@@ -21,6 +23,9 @@ const fetchHelper = async (url, options = {}) => {
   }
 
   return response.json();
+  } catch (error) {
+    return null
+  }
 };
 
 export default fetchHelper;

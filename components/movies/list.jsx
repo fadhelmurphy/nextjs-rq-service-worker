@@ -87,7 +87,7 @@ const MovieList = () => {
     <>
       <div className="p-5">
         <SearchBar onSearch={handleSearch} />
-        <div className="grid grid-cols-[repeat(5,1fr)] gap-4">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] gap-4">
           {data?.Search?.map((movie) => (
             <div
               key={movie?.imdbID}
