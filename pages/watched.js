@@ -46,7 +46,6 @@ const WatchedMovies = () => {
 
   return (
     <Layout pageTitle="Watched Movies">
-    <div className="p-5">
       <h1 className="text-2xl font-bold mb-4">Watched Movies</h1>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] gap-4">
         {paginatedMovies.length > 0 ? (
@@ -103,8 +102,7 @@ const WatchedMovies = () => {
           flex-wrap: wrap;
           justify-content: space-between;
         }
-      `}</style>
-    </div></Layout>
+      `}</style></Layout>
   );
 };
 

@@ -21,7 +21,7 @@ const Layout = ({ children, pageTitle = null, pageDescription }) => {
           background-color: #f9f9f9;
         }
         main {
-          padding: 20px;
+          padding: 20px 0;
         }
       `}</style>
     </div>

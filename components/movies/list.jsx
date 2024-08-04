@@ -85,7 +85,6 @@ const MovieList = () => {
 
   return (
     <>
-      <div className="p-5">
         <SearchBar onSearch={handleSearch} />
         <div className="grid grid-cols-[repeat(auto-fill,minmax(14rem,1fr))] gap-4">
           {data?.Search?.map((movie) => (
@@ -150,7 +149,7 @@ const MovieList = () => {
             {isFetching ? "Loading more..." : "Next Page"}
           </button>
         </div>
-      </div>
+    
       {notification && (
         <Notification
           message={notification}
